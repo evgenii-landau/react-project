@@ -1,0 +1,31 @@
+.form {
+	margin-bottom: 20px;
+}
+
+.textarea {
+	margin-bottom: 20px;
+	resize: none;
+	width: 100%;
+	min-height: 30px;
+}
+
+.title {
+	padding: 10px 0;
+	font-size: 19px;
+	color: black;
+	font-weight: 600;
+}
+
+.button {
+	color: #fff;
+	width: 100px;
+	padding: 6px 10px;
+	background-color: #0866FF;
+	border-radius: 5px;
+	cursor: pointer;
+	border: 1px solid;
+
+	&:hover {
+		opacity: 0.8;
+	}
+}

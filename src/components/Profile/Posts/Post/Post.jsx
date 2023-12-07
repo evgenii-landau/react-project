@@ -4,11 +4,17 @@ import styles from './Post.module.scss'
 
 const Post = (props) => {
 	return (
-		<div>	
-			{ props.message }
-			<p>This is avatar</p>
-			<p>This is text</p>
-			<p>This is blablabla	</p>
+		<div className={'styles.post'}>	
+			<div>
+				<img className={'styles.user-img'} src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" alt="user photo" />
+			</div>
+			<div>
+				<p>
+					post text post text post text post text post text post text 
+					post text post text post text post text post text post text 
+					post text post text post text post text post text post text 
+				</p>
+			</div>
 		</div>
 	);
 }

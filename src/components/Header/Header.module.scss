@@ -1,8 +1,10 @@
 .header {
-	grid-area: header;
-	background-color: red;
-}
+	padding: 10px 10px;
+	margin-bottom: 30px;
 
-.header img {
-	width: 20px;
+	display: flex;
+	// justify-content: space-between;
+	align-items: center;
+
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5)
 }

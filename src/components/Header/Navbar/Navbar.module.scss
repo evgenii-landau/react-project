@@ -1,0 +1,24 @@
+.navbar {
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+.list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+.item {
+	list-style: none;
+}
+
+.link {
+	color: #0866FF;
+	text-decoration: none;
+
+	&:hover {
+		opacity: 0.8;
+	}
+}
