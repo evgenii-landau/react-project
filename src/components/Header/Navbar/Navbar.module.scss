@@ -1,5 +1,6 @@
 .navbar {
-	max-width: 300px;
+	padding: 0 10px;
+	max-width: 500px;
 	margin: 0 auto;
 }
 
@@ -21,4 +22,8 @@
 	&:hover {
 		opacity: 0.8;
 	}
+}
+
+.activeLink {
+	font-weight: 600;
 }

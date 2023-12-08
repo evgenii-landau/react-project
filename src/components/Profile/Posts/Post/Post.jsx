@@ -10,9 +10,7 @@ const Post = (props) => {
 			</div>
 			<div>
 				<p>
-					post text post text post text post text post text post text 
-					post text post text post text post text post text post text 
-					post text post text post text post text post text post text 
+					{props.postText}
 				</p>
 			</div>
 		</div>
