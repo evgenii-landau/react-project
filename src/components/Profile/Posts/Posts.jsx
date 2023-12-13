@@ -2,14 +2,9 @@ import React from "react";
 import styles from './Posts.module.scss'
 import Post from './Post/Post'
 
-const Posts = () => {
+const Posts = (props) => {
 
-	let posts = [{postText: 'text post 1'}, 
-					{postText: 'text post 2'}, 
-					{postText: 'text post 3'}, 
-					{postText: 'text post 4'}]
-
-	let postsElements = posts.map( post => <Post postText={post.postText}/> )
+	let postsElements = props.posts.map( post => <Post postText={post.postText}/> )
 
 	return (
 		<div className={styles.content}>
