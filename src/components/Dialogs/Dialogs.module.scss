@@ -7,6 +7,12 @@
 	padding: 10px;
 }
 
+.dialogsList {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
 .dialogsItems .active {
 	color: gold
 }

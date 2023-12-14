@@ -1,14 +1,17 @@
 import React from "react";
 import styles from './ProfileInfo.module.scss'
+import userTheme from './../../../img/ProfileInfo/theme.jpg.webp'
+import avatar from './../../../img/ProfileInfo/avatar.png'
 
 const ProfileInfo = (props) => {
 	return (
 		<div>
 			<div>
-				<img className={styles.top_img}src="https://gb.ru/blog/wp-content/uploads/2023/03/%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%BE%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B5%D0%B2%D1%8B%D0%B9-%D1%8F%D0%B7%D1%8B%D0%BA-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-1.jpg.webp" alt="images"></img>
+				<img className={styles.topImg} src={userTheme} alt="images"></img>
 			</div>
-			<div>
-				ava + discription
+			<div className={styles.contentWrapper}>
+				<img className={styles.avatar} src={avatar} alt="avatar" />
+				<p>Hey there! 👋 I'm Alex, by day, I'm a web developer weaving through lines of code, and by night, I'm a creative mind diving into the world of digital art. Passionate about creating meaningful connections, I'm here on this platform to share insights, exchange thoughts, and maybe even crack a few coding jokes. Join me on this journey of constant learning and laughter. Let's connect and make this virtual space feel like home! 🚀✨</p>
 			</div>
 		</div>
 	)

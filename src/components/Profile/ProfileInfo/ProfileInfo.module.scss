@@ -1,4 +1,15 @@
-.top_img {
+.topImg {
 	width: 100%;
 	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+.avatar {
+	max-width: 100px;
+}
+
+.contentWrapper {
+	display: flex;
+	align-items: center;
+	gap: 20px;
 }

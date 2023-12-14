@@ -4,9 +4,17 @@ import { NavLink } from "react-router-dom";
 
 const DialogItem = (props) => {
 
+	const styleUserLink = ({isActive}) => {
+		return {
+			fontWeight: isActive ? 'bold' : '',
+			color: isActive ? 'red' : '' 
+		}
+	}
+
 	return (
-		<li className={styles.item + ' ' + styles.active}>
-			<NavLink to={`/dialogs/${props.id}`}>
+		<li>
+			<img src={props.avatar} alt="avatar" />
+			<NavLink style={styleUserLink} to={`/dialogs/${props.id}`}>
 				{props.name}
 			</NavLink >
 		</li>

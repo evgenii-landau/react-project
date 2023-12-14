@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'sfns_bold';
+    src: url('_helveticaneuedeskinterface_bold-webfont.woff2') format('woff2'),
+         url('_helveticaneuedeskinterface_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'sfns_regular';
+    src: url('_helveticaneuedeskinterface_regular-webfont.woff2') format('woff2'),
+         url('_helveticaneuedeskinterface_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
