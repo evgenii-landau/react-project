@@ -1,18 +1,49 @@
 .dialogs {
-	display: grid;
-	grid-template-columns: 1fr 2fr;
-}
-
-.dialogsItems {
+	margin-bottom: 30px;
 	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+
+	border: 1px solid black;
+	border-radius: 5px;
 }
 
 .dialogsList {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 40px;
 }
 
-.dialogsItems .active {
-	color: gold
+.messagesList {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+}
+
+.textarea {
+	margin-bottom: 20px;
+	width: 100%;
+	min-height: 15px;
+
+	font-size: 18px;
+}
+
+.button {
+	align-self: end;
+	width: 200px;
+	padding: 15px 10px;
+	background-color: #0866ff;
+	border-radius: 5px;
+	border: 1px solid;
+	color: #fff;
+	font-size: 16px;
+
+	&:hover {
+		opacity: 0.8;
+	}
 }

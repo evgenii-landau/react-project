@@ -13,7 +13,7 @@ const DialogItem = (props) => {
 
 	return (
 		<li>
-			<img src={props.avatar} alt="avatar" />
+			<img src={props.avatarUrl} alt="avatar" />
 			<NavLink style={styleUserLink} to={`/dialogs/${props.id}`}>
 				{props.name}
 			</NavLink >

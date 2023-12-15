@@ -1,0 +1,21 @@
+.aside {
+	justify-self: center;
+}
+
+.asideDesc {
+	margin-bottom: 20px;
+
+	font-size: 18px;
+	font-weight: 400;
+	color: blue;
+}
+
+.asideList {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.asideImg {
+	max-width: 80px;
+}

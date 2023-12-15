@@ -4,21 +4,33 @@ import Post from './Post/Post'
 
 const Posts = (props) => {
 
-	let postsElements = props.posts.map( post => <Post postText={post.postText}/> )
+	let postsElements = props.posts.map( post => <Post postText={post.message}/> )
+
+	let newPostElement = React.createRef()
+
+	const addPost = () => {
+		props.addPost()
+	}
+
+	const changeTextArea = () => {
+		let text = newPostElement.current.value
+		props.updatePostText(text)
+	}
 
 	return (
 		<div className={styles.content}>
 			<div>
 				<p className={styles.title}>My Posts</p>
+
 				<form className={styles.form}>
-					<textarea className={styles.textarea} placeholder="Create your post" cols="30" rows="5">
-						
-					</textarea>
-					<button className={styles.button}>Add post</button>
+					<textarea className={styles.textarea} ref={newPostElement} onChange={changeTextArea} value={props.newPostText} placeholder="Create your post" cols="30" rows="5" />
+					<button onClick={addPost} className={styles.button} type="button">Add post</button>
 				</form>
-				<div>
+
+				<div className={styles.postsWrapper}>
 					{ postsElements }
 				</div>
+
 			</div>
 		</div>
 	);

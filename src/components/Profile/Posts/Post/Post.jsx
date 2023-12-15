@@ -1,12 +1,16 @@
 import React from "react";
 import styles from './Post.module.scss'
+import avatar from './../../../../img/ProfileInfo/avatar.png'
 
 
 const Post = (props) => {
+
+	
+
 	return (
-		<div className={'styles.post'}>	
+		<div className={styles.post}>	
 			<div>
-				<img className={'styles.user-img'} src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" alt="user photo" />
+				<img className={styles.userImg} src={avatar} alt="user photo" />
 			</div>
 			<div>
 				<p>

@@ -11,7 +11,7 @@ const ProfileInfo = (props) => {
 			</div>
 			<div className={styles.contentWrapper}>
 				<img className={styles.avatar} src={avatar} alt="avatar" />
-				<p>Hey there! 👋 I'm Alex, by day, I'm a web developer weaving through lines of code, and by night, I'm a creative mind diving into the world of digital art. Passionate about creating meaningful connections, I'm here on this platform to share insights, exchange thoughts, and maybe even crack a few coding jokes. Join me on this journey of constant learning and laughter. Let's connect and make this virtual space feel like home! 🚀✨</p>
+				<p className={styles.desc}>Hey there! 👋 I'm Alex, by day, I'm a web developer weaving through lines of code, and by night, I'm a creative mind diving into the world of digital art. Passionate about creating meaningful connections, I'm here on this platform to share insights, exchange thoughts, and maybe even crack a few coding jokes. Join me on this journey of constant learning and laughter. Let's connect and make this virtual space feel like home! 🚀✨</p>
 			</div>
 		</div>
 	)

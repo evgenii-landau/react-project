@@ -4,12 +4,17 @@
 	margin-bottom: 20px;
 }
 
-.avatar {
-	max-width: 100px;
-}
-
 .contentWrapper {
 	display: flex;
 	align-items: center;
 	gap: 20px;
+}
+
+.avatar {
+	max-width: 100px;
+}
+
+.desc {
+	font-size: 18px;
+	line-height: 1.4;
 }
