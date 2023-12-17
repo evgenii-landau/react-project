@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Dialogs.module.scss';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
+import { sendMessageActionCreater, changeTextAreaDialogsActionCreator } from '../../redux/state'
 
 const Dialogs = (props) => {
 	let dialogsElements = props.dialogPage.dialogs.map(el => <DialogItem id={el.id} name={el.name} avatarUrl={el.avatarUrl} /> )
@@ -10,12 +11,12 @@ const Dialogs = (props) => {
 	const newMessage = React.createRef();
 
 	const sendMessage = () => {
-		props.sendMessage()
+		props.dispatch(sendMessageActionCreater())
 	}
 
-	const changeTextArea = () => {
+	const changeTextAreaDialogs = () => {
 		const text = newMessage.current.value
-		props.updateMessage(text)
+		props.dispatch(changeTextAreaDialogsActionCreator(text))
 	}
 
 	return (
@@ -35,7 +36,7 @@ const Dialogs = (props) => {
 			</div>
 
 			<form className={styles.form}>
-				<textarea ref={newMessage} className={styles.textarea} onChange={changeTextArea} value={props.dialogPage.textMessage} cols="30" rows="2"></textarea>
+				<textarea ref={newMessage} className={styles.textarea} onChange={changeTextAreaDialogs} value={props.dialogPage.newTextMessage} cols="30" rows="2"></textarea>
 				<button onClick={sendMessage} className={styles.button} type="button">Send message</button>
 			</form>
 		</div>

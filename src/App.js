@@ -18,8 +18,8 @@ function App(props) {
 				<Aside/>
 				<div className='app-wrapper-content'>
 					<Routes>
-						<Route path='/profile' element={<Profile profilePage={props.store.getState().profilePage} addPost={props.store.addPost.bind(props.store)} updatePostText={props.store.updatePostText.bind(props.store)}/>}/>
-						<Route path='/dialogs/*' element={<Dialogs dialogPage={props.store.getState().dialogsPage} updateMessage={props.store.updateMessage.bind(props.store)} sendMessage={props.store.sendMessage.bind(props.store)}/>}/>
+						<Route path='/profile' element={<Profile profilePage={props.store.getState().profilePage} dispatch={props.store.dispatch.bind(props.store)}/>}/>
+						<Route path='/dialogs/*' element={<Dialogs dialogPage={props.store.getState().dialogsPage} dispatch={props.store.dispatch.bind(props.store)}/>}/>
 						<Route path='/news' element={<News />}/>
 						<Route path='/music' element={<Music />}/>
 						<Route path='/settings' element={<Settings />}/>
