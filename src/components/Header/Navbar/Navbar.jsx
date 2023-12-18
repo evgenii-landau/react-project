@@ -9,7 +9,7 @@ const Navbar = () => {
 	const NavLinkStyles = ({isActive}) => {
 		return {
 			fontWeight: isActive ? 'bold' : '',
-			color: isActive ? 'grey' : ''
+			color: isActive ? 'orange' : ''
 		}
 	}
 
