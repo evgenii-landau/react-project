@@ -21,6 +21,7 @@ body {
 	font-family: "sfns_regular", "sfns_bold";
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	box-sizing: border-box;
 }
 
 code {
@@ -45,6 +46,7 @@ a {
 button {
 	cursor: pointer;
 	font-family: inherit;
+	border: none;
 }
 
 textarea {

@@ -5,8 +5,9 @@ import Message from './Message/Message';
 
 
 const Dialogs = (props) => {
-	let dialogsElements = props.dialogs.map(el => <DialogItem id={el.id} name={el.name} avatarUrl={el.avatarUrl} /> )
-	let messagesElements = props.messages.map(el => <Message id={el.id} message={el.message}/>)
+	
+	let dialogsElements = props.dialogsPage.dialogs.map(el => <DialogItem id={el.id} name={el.name} avatarUrl={el.avatarUrl} /> )
+	let messagesElements = props.dialogsPage.messages.map(el => <Message id={el.id} message={el.message}/>)
 
 	const newMessage = React.createRef();
 
@@ -16,7 +17,7 @@ const Dialogs = (props) => {
 
 	const changeTextAreaDialogs = () => {
 		const text = newMessage.current.value
-		props.changeTextAreaDialogs(text)
+		props.changeTextAreaDialogsActionCreator(text)
 	}
 
 	return (

@@ -4,7 +4,7 @@ import Post from './Post/Post'
 
 const Posts = (props) => {
 	
-	let postsElements = props.posts.map( post => <Post postText={post.message}/> )
+	let postsElements = props.profilePage.posts.map( post => <Post postText={post.message}/> )
 
 	const newPostElement = React.createRef()
 
