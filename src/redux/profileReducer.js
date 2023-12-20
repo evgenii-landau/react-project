@@ -14,30 +14,34 @@ const profileReducer = (state = initialStore, action) => {
 
 	switch (action.type) {
 		case 'UPDATE-POST-TEXT':
-			state.newPostText = action.newPostText
-			return state;
+			return {
+				...state,
+				newPostText: action.newPostText	
+			}
 		case 'ADD-POST':
 			if (state.newPostText) {
 				if (state.posts.length === 0) {
-					state.posts.push(
-						{
+					return {
+						...state,
+						posts: [...state.posts, {
 							id: 0, 
 							message: state.newPostText,
 							likeCount: 0
-						}
-					)
-					state.newPostText = ''
+						}],
+						newPostText: ''
+					}
 				} else {
-					const newPost = {
-						id: state.posts[state.posts.length - 1].id + 1,
-						message: state.newPostText,
-						likeCount: 0
-					}	
-					state.posts.push(newPost)
-					state.newPostText = ''
+					return {
+						...state,
+						posts: [...state.posts, {
+							id: state.posts[state.posts.length - 1].id + 1,
+							message: state.newPostText,
+							likeCount: 0
+						}],
+						newPostText: ''
+					}
 				}
 			}
-			return state;
 		default:
 			return state;
 	}

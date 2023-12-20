@@ -4,15 +4,14 @@ import UserItem from "./UserItem/UserItem";
 
 
 const Users = (props) => {
-	
-	let usersItems = props.users.map((el) => <UserItem id={el.id} followed={el.followed} userName={el.userName} userStatus={el.userStatus} userCountry={el.userCountry} userCity={el.userCity} userAvatar={el.userAvatar}/>) 
+	let usersItem = props.usersPage.users.map((user) => <UserItem key={user.id} followed={user.followed} name={user.name} status={user.status} country={user.country} city={user.city} avatar={user.avatar}/>) 
 	
 	return (
 		<div>
-			<div className={style.users}>
-				{ usersItems }
+			<div className={ style.users }>
+				{ usersItem }
 			</div>
-			<button className={style.button}>
+			<button className={ style.button }>
 				Show More
 			</button>
 		</div>

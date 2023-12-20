@@ -5,9 +5,9 @@ import Message from './Message/Message';
 
 
 const Dialogs = (props) => {
-	
-	let dialogsElements = props.dialogsPage.dialogs.map(el => <DialogItem id={el.id} name={el.name} avatarUrl={el.avatarUrl} /> )
-	let messagesElements = props.dialogsPage.messages.map(el => <Message id={el.id} message={el.message}/>)
+
+	let dialogsElements = props.dialogsPage.dialogs.map(el => <DialogItem key={el.id} name={el.name} avatarUrl={el.avatarUrl} /> )
+	let messagesElements = props.dialogsPage.messages.map(el => <Message key={el.id} message={el.message}/>)
 
 	const newMessage = React.createRef();
 
@@ -37,7 +37,7 @@ const Dialogs = (props) => {
 			</div>
 
 			<form className={styles.form}>
-				<textarea ref={newMessage} className={styles.textarea} onChange={changeTextAreaDialogs} value={props.newTextMessage} cols="30" rows="2"></textarea>
+				<textarea ref={newMessage} className={styles.textarea} onChange={changeTextAreaDialogs} value={props.dialogsPage.newTextMessage} cols="30" rows="2"></textarea>
 				<button onClick={sendMessage} className={styles.button} type="button">Send message</button>
 			</form>
 		</div>

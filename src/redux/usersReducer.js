@@ -1,4 +1,4 @@
-import userAvarat from '../img/Users/userAvatar.png'
+import avatar from './../img/Users/userAvatar.png'
 
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
@@ -6,11 +6,11 @@ const UNFOLLOW = 'UNFOLLOW'
 
 let initialStore = {
 	users: [
-		{id: 1, followed: true, userName: 'Anya', userStatus: 'Hello my name is Anya', userCountry: 'Ukraine', userCity: 'Lviv', userAvatar: userAvarat},
-		{id: 2, followed: false, userName: 'Jack', userStatus: 'Hello my name is Jack', userCountry: 'America', userCity: 'Los Angeles', userAvatar: userAvarat},
-		{id: 3, followed: false, userName: 'Nina', userStatus: 'Hello my name is Nina', userCountry: 'Russia', userCity: 'Perm', userAvatar: userAvarat},
-		{id: 4, followed: true, userName: 'David', userStatus: 'Hello my name is David', userCountry: 'Armenia', userCity: 'Erevan', userAvatar: userAvarat},
-		{id: 5, followed: false, userName: 'Vladimir', userStatus: 'Hello my name is Vladimir', userCountry: 'Russia', userCity: 'Moscow', userAvatar: userAvarat}
+		{id: 1, followed: true, name: 'Anya', status: 'Hello my name is Anya', country: 'Ukraine', city: 'Lviv', avatar: avatar},
+		{id: 2, followed: false, name: 'Jack', status: 'Hello my name is Jack', country: 'America', city: 'Los Angeles', avatar: avatar},
+		{id: 3, followed: false, name: 'Nina', status: 'Hello my name is Nina', country: 'Russia', city: 'Perm', avatar: avatar},
+		{id: 4, followed: true, name: 'David', status: 'Hello my name is David', country: 'Armenia', city: 'Erevan', avatar: avatar},
+		{id: 5, followed: false, name: 'Vladimir', status: 'Hello my name is Vladimir', country: 'Russia', city: 'Moscow', avatar: avatar}
 		]
 }
 

@@ -19,31 +19,35 @@ let initialStore = {
 }
 
 const dialogReducer = (state = initialStore, action) => {
-
+	
 	switch (action.type) {
 		case 'UPDATE-MESSAGE':
-			state.newTextMessage = action.newText
-			return state;
+			return {
+				...state,
+				newTextMessage: action.newText
+			}
 		case 'SEND-MESSAGE':
 			if (state.newTextMessage) {
 				if (state.messages.length === 0) {
-					state.messages.push(
-						{
+					return {
+						...state,
+						messages: [...state.messages, {
 							id: 0,
 							message: state.newTextMessage
-						}
-					)
-					state.newTextMessage = ''
-				} else { 
-					const newMessage = {
-						id: state.messages[state.messages.length - 1].id + 1,
-						message: state.newTextMessage
+						}],
+						newTextMessage: ''
 					}
-					state.messages.push(newMessage)
-					state.newTextMessage = ''
+				} else { 
+					return {
+						...state,
+						messages: [...state.messages, {
+							id: state.messages[state.messages.length - 1].id + 1,
+							message: state.newTextMessage
+						}],
+						newTextMessage: ''
+					}
 				}
 			}
-			return state;
 		default:
 			return state;
 	}
