@@ -1,21 +1,46 @@
 import React from "react";
 import style from './Users.module.scss'
-import UserItem from "./UserItem/UserItem";
+// import UserItem from "./UserItem/UserItem";
 
 
 const Users = (props) => {
-	let usersItem = props.usersPage.users.map((user) => <UserItem key={user.id} followed={user.followed} name={user.name} status={user.status} country={user.country} city={user.city} avatar={user.avatar}/>) 
-	
-	return (
-		<div>
-			<div className={ style.users }>
-				{ usersItem }
-			</div>
-			<button className={ style.button }>
-				Show More
-			</button>
-		</div>
-	)
+
+	return <div>
+		{
+			props.users.map( (user) => (
+				<div key={user.id} className={style.userItem}>
+					<div className={style.avatarWrapper}>
+						<a href="#!">
+							<img className={style.userAvatar} src={user.avatar} alt="user avatar" />
+						</a>
+						<div>
+							{ user.followed 
+							? <button onClick={() => {props.follow(user.id)}}>Follow</button> 
+							: <button onClick={() => {props.unfollow(user.id)}}>Unfollow</button> }
+						</div>
+					</div>
+					<div className={style.userData}>
+						<div className={style.userInfo}>
+							<p className={style.userName}>
+								{user.name}
+							</p>
+							<p className={style.userStatus}>
+								{user.status}
+							</p>
+						</div>
+						<div className={style.userLocation}>
+							<p className={style.userCountry}>
+								{ user.country }
+							</p>
+							<p className={style.userCity}>
+								{ user.city }
+							</p>
+						</div>
+					</div>
+				</div>
+			))
+		}
+	</div>
 }
 
 export default Users;

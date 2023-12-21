@@ -14,3 +14,62 @@
 		opacity: 0.8;
 	}
 }
+
+
+.userItem {
+	display: flex;
+	
+	border: 1px solid #000;
+	border-radius: 5px;
+}
+.avatarWrapper {
+	max-width: 100px;
+	border-right: 1px solid #000;
+	border-radius: 5px;
+}
+.userAvatar {
+	object-fit: cover;
+	width: 100%;
+}
+.button {
+	width: 100%;
+
+	border-top: 1px solid #000;
+	border-radius: 5px;
+	color: orchid;
+	font-size: 15px;
+	font-weight: 600;
+}
+.userData {
+	width: 100%;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+.userInfo {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.userName {
+	font-size: 20px;
+	font-weight: 700;
+}
+.userStatus {
+	font-size: 18px;
+	font-style: italic;
+}
+.userLocation {
+	width: 100px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.userCountry {
+	font-size: 20px;
+	font-weight: 700;
+}
+.userCity {
+	font-size: 18px;
+	font-style: italic;
+}
