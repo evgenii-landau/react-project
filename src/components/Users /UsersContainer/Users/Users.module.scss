@@ -1,5 +1,15 @@
+.pagination {
+	display: flex;
+	gap: 30px;
+	margin-bottom: 20px;
+}
 .selectedPage {
 	font-weight: bold;
+}
+.usersList {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
 }
 .users {
 	display: flex;
@@ -30,8 +40,8 @@
 	border-radius: 5px;
 }
 .userAvatar {
+	width: 100px;
 	object-fit: cover;
-	width: 100%;
 }
 .userButton {
 	width: 100%;
