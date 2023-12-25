@@ -1,34 +1,56 @@
 import React from "react";
 import styles from './Users.module.scss'
 import avatar from './../../img/Users/userAvatar.png'
+import axios, * as others from 'axios';
 // import UserItem from "./UserItem/UserItem";
 
 
-const Users = (props) => {
-	if (props.users.length === 0) {
-		props.setUsers(
-			[
-				{id: 1, followed: false, name: 'Anya', status: 'Hello my name is Anya', country: 'Ukraine', city: 'Lviv', avatar: avatar},
-				{id: 2, followed: true, name: 'Jack', status: 'Hello my name is Jack', country: 'America', city: 'Los Angeles', avatar: avatar},
-				{id: 3, followed: true, name: 'Nina', status: 'Hello my name is Nina', country: 'Russia', city: 'Perm', avatar: avatar},
-				{id: 4, followed: false, name: 'David', status: 'Hello my name is David', country: 'Armenia', city: 'Erevan', avatar: avatar},
-				{id: 5, followed: true, name: 'Vladimir', status: 'Hello my name is Vladimir', country: 'Russia', city: 'Moscow', avatar: avatar}
-			]
-		)
+class Users extends React.Component {
+
+	componentDidMount() {
+		axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${this.props.currentPage}`).then(response => {
+		this.props.setUsers(response.data.items)
+		this.props.setTotalUsersCount(response.data.totalCount)
+		})
 	}
 
-	return <div>
+	onPageChanged = (pageNumber) => {
+		this.props.setCurrentPage(pageNumber)
+		 
+		axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pageSize}&page=${pageNumber}`).then(response => {
+		this.props.setUsers(response.data.items)
+		})
+	}
+
+	render() {
+
+		let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize)
+		let pages = []
+
+		for (let i = 1; i <= pagesCount; i++) {
+			if (pages.length < 10) {
+				pages.push(i)
+			}
+		}
+
+		return <div>
+			<div>
+				{pages.map( page => {
+					return <button className={ this.props.currentPage === page ? styles.selectedPage: ''} onClick={ () => {this.onPageChanged(page)} }>{page}</button>
+					})}
+			</div>
+			
 		{
-			props.users.map( (user) => (
+			this.props.users.map( (user) => (
 				<div key={user.id} className={styles.userItem}>
 					<div className={styles.avatarWrapper}>
 						<a href="#!">
-							<img className={styles.userAvatar} src={user.avatar} alt="user avatar" />
+							<img className={styles.userAvatar} src={ user.photos.small ? user.photos.small : avatar } alt="user avatar" />
 						</a>
 						<div>
 							{ user.followed 
-							? <button className={styles.userButton} onClick={() => {props.unfollow(user.id)}}>Follow</button> 
-							: <button className={styles.userButton} onClick={() => {props.follow(user.id)}}>Unfollow</button> }
+							? <button className={styles.userButton} onClick={() => {this.props.unfollow(user.id)}}>Follow</button> 
+							: <button className={styles.userButton} onClick={() => {this.props.follow(user.id)}}>Unfollow</button> }
 						</div>
 					</div>
 					<div className={styles.userData}>
@@ -42,10 +64,10 @@ const Users = (props) => {
 						</div>
 						<div className={styles.userLocation}>
 							<p className={styles.userCountry}>
-								{ user.country }
+								{/* { user.country } */ "Russia"}
 							</p>
 							<p className={styles.userCity}>
-								{ user.city }
+								{/* { user.city } */"Perm"}
 							</p>
 						</div>
 					</div>
@@ -53,6 +75,7 @@ const Users = (props) => {
 			))
 		}
 	</div>
+	}
 }
 
 export default Users;
