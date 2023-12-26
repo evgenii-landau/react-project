@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import styles from './ProfileInfo.module.scss'
-import userTheme from './../../../img/ProfileInfo/theme.jpg.webp'
-import avatar from './../../../img/ProfileInfo/avatar.png'
+import userTheme from './../../../assets/img/ProfileInfo/theme.jpg.webp'
+import avatar from './../../../assets/img/ProfileInfo/avatar.png'
 
 const ProfileInfo = (props) => {
 	return (

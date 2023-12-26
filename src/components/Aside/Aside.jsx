@@ -1,6 +1,6 @@
 import React from "react"
 import styles from './Aside.module.scss'
-import profileIcon from './../../img/Aside/profileIcon.png'
+import profileIcon from './../../assets/img/Aside/profileIcon.png'
 
 const Aside = (props) => {
 	return (

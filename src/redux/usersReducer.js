@@ -1,17 +1,17 @@
-import avatar from './../img/Users/userAvatar.png'
-
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET_USERS'
 const SET_PAGE_NUMBER = 'SET_PAGE_NUMBER'
 const SET_TOTAL_COUNT = 'SET_TOTAL_COUNT'
+const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
 
 
 let initialStore = {
 	users: [],
 	pageSize: 5,
 	totalUsersCount: 0,
-	currentPage: 1
+	currentPage: 1,
+	isFetching: false,
 }
 
 const usersReducer = (state = initialStore, action) => {
@@ -52,7 +52,12 @@ const usersReducer = (state = initialStore, action) => {
 		 return {
 			...state,
 			totalUsersCount: action.count
-		 }
+			}
+		case TOGGLE_IS_FETCHING:
+			return {
+				...state,
+				isFetching: action.isFetching
+			}
 		default:
 			return state;
 	}
@@ -63,5 +68,6 @@ export const unfollowAC = (userID) => ({type: UNFOLLOW, userID: userID})
 export const setUsersAC = (users) => ({type: SET_USERS, users: users})
 export const setPageNumberAC = (pageNumber) => ({type: SET_PAGE_NUMBER, pageNumber: pageNumber})
 export const setTotalUsersCountAC = (totalCount) => ({type: SET_TOTAL_COUNT, count: totalCount})
+export const toggleIsFetchingAC = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 
 export default usersReducer;

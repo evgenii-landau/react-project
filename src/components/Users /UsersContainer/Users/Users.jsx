@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './Users.module.scss'
-import avatar from './../../../../img/Users/userAvatar.png'
+import avatar from './../../../../assets/img/Users/userAvatar.png'
 // import UserItem from "./UserItem/UserItem";
 
 
@@ -19,7 +19,7 @@ let Users = (props) => {
 	<div>
 		<div className={styles.pagination}>
 			{pages.map( page => {
-				return <button className={ props.currentPage === page ? styles.selectedPage: ''} onClick={ () => {props.onPageChanged(page)} }>{page}</button>
+				return <button className={ props.currentPage === page ? styles.selectedPage: '' } onClick={ () => {props.onPageChanged(page)} }>{ page }</button>
 				})}
 		</div>
 		<ul className={styles.usersList}>

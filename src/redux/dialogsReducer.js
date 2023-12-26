@@ -4,11 +4,11 @@ const SEND_MESSAGE = 'SEND-MESSAGE'
 
 let initialStore = {
 	dialogs: [
-		{id: 1, name: 'Dmitrii', avatarUrl: ('./../../../img/DialogItem/avatar.png')},
-		{id: 2, name: 'Sasha', avatarUrl: ('./../../../img/DialogItem/avatar.png')},
-		{id: 3, name: 'David', avatarUrl: ('./../../../img/DialogItem/avatar.png')},
-		{id: 4, name: 'Daria', avatarUrl: ('./../../../img/DialogItem/avatar.png')},
-		{id: 5, name: 'Volodya', avatarUrl: ('./../../../img/DialogItem/avatar.png')}
+		{id: 1, name: 'Dmitrii', avatarUrl: ('./../../../assets/img/DialogItem/avatar.png')},
+		{id: 2, name: 'Sasha', avatarUrl: ('./../../../assets/img/DialogItem/avatar.png')},
+		{id: 3, name: 'David', avatarUrl: ('./../../../assets/img/DialogItem/avatar.png')},
+		{id: 4, name: 'Daria', avatarUrl: ('./../../../assets/img/DialogItem/avatar.png')},
+		{id: 5, name: 'Volodya', avatarUrl: ('./../../../assets/img/DialogItem/avatar.png')}
 	],
 
 	messages: [

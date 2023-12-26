@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 import styles from './Post.module.scss'
-import avatar from './../../../../img/ProfileInfo/avatar.png'
+import avatar from './../../../../assets/img/ProfileInfo/avatar.png'
 
 
 const Post = (props) => {
