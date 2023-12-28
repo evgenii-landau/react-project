@@ -13,8 +13,8 @@ let ProfileContainer = (props) => {
 		axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`)
 			.then( response => {
 				props.setUserProfile(response.data);
-			} )
-	}, [userId])
+		})
+	})
 
 	return (
 		<Profile { ...props } profile={ props.profile } profilePage={ props.profilePage } />

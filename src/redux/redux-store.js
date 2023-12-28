@@ -2,6 +2,7 @@ import { legacy_createStore as createStore, combineReducers } from 'redux';
 import dialogReducer from './dialogsReducer';
 import profileReducer from './profileReducer';
 import usersReducer from './usersReducer';
+import authReducer from './authReducer';
 
 
 let reducers = combineReducers(
@@ -9,6 +10,7 @@ let reducers = combineReducers(
 		dialogsPage: dialogReducer,
 		profilePage: profileReducer,
 		usersPage: usersReducer,
+		auth: authReducer,
 	}
 )
 
