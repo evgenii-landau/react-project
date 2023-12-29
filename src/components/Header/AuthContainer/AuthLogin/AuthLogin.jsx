@@ -1,13 +1,14 @@
 import React from 'react';
 import styles from './AuthLogin.module.scss'
+import { NavLink } from 'react-router-dom';
 
 
 const AuthLogin = (props) => {
 	return (
 		<div>
-			<button>
+			<NavLink to='/login'>
 				Login
-			</button>
+			</NavLink>
 		</div>
 	)
 }

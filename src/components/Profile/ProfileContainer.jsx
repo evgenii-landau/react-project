@@ -10,6 +10,7 @@ let ProfileContainer = (props) => {
 	const { userId } = useParams()
 
 	useEffect( () => {
+		// if (!isAuth)
 		axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`)
 			.then( response => {
 				props.setUserProfile(response.data);
@@ -24,6 +25,7 @@ let ProfileContainer = (props) => {
 
 const mapStateToProps = (state) => {
 	return {
+		isAuth: state.auth.isAuth,
 		profilePage: state.profilePage,
 		profile: state.profilePage.profile
 	}

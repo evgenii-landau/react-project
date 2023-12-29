@@ -1,5 +1,3 @@
-import dialogReducer from "./dialogsReducer";
-
 const SET_USER_DATA = 'SET_USER_DATA'
 
 
@@ -11,7 +9,7 @@ const initialState = {
 }
 
 const authReducer = (state = initialState, action) => {
-	switch (action) {
+	switch (action.type) {
 		case SET_USER_DATA:
 			return {
 				...state,
